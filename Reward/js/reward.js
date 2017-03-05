@@ -53,7 +53,11 @@
         setRewardText("感谢大佬打赏【" + qrpay_query_response.buyer_pay_amount + "】元！🙏");
         $(REWARD_PLUGIN_STR.CANCLE_BTN_SELECTOR).hide();
         clearOldOrderQuery();
-        setTimeout(function () { $(REWARD_PLUGIN_STR.WAIT_BUYER_PAY_DIALOG_SELECTOR).hide() }, 3000);
+        setTimeout(function () { 
+            $(REWARD_PLUGIN_STR.WAIT_BUYER_PAY_DIALOG_SELECTOR).hide();
+            $(REWARD_PLUGIN_STR.REWARD_MSG_SELECTOR).text(REWARD_PLUGIN_STR.DEFAULT);
+            $(REWARD_PLUGIN_STR.WAIT_BUYER_PAY_DIALOG_SELECTOR).show();
+        }, 3000);
     }
     function startNewOrderQuery() {
         var isFirstWait = true;
