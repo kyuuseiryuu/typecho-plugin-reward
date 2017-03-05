@@ -14,3 +14,31 @@
   2. 此插件依赖 `jQuery`,`jQuery.qrcode`插件
   3. `jQuery` 需要 `自己引入`，`jQuery.qrcode` 在插件中已自动引入
   4. 此插件 `支付宝SDK` 版本只支持 `PHP 5.6` 以上
+
+## 效果
+
+### 点击赏按钮后
+![](reward_1.png)
+
+### 点击支付按钮后
+
+![](reward_2.png)
+
+### 等待支付状态
+
+![](reward_3.png)
+
+
+### 取消支付
+
+![](reward_4.png)
+
+### 支付完成
+
+![](reward_5.png)
+
+### 支付宝订单状态
+
+![](reward_6.png)
+
+
