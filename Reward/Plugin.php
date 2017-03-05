@@ -68,49 +68,16 @@ class Reward_Plugin implements Typecho_Plugin_Interface
 	
 	public static function render($archive){
 		$content = $archive->text;
-		$template = "<div id=\"reward-plugin\">
-  <p class=\"background\"></p>
-  <div class=\"reward-content-pagecenter\">
-    <div id=\"reward-qrcode-container\" class=\"center\"></div>
-    <h3 id=\"reward-msg\">等待大佬打赏中~</h3>
-    <button id=\"cancel-pay\">算了不给了</button>
-  </div>
-</div>
-<div class=\"reward_w endzy-reward-layer\" style=\"display: none;\">
-  <p class=\"reward-bg\"></p>
-  <div class=\"reward-box\">
-    <div class=\"reward-content\">
-      <h3 class=\"reward-title\">打了个赏<span class=\"reward-close\"></span></h3>
-      <div class=\"reward-user-head\">
-        <p class=\"reward-tip\"></p>
-        <div>
-          <a class=\"reward-img-box\"><img class=\"reward-head-img\" src=\"http://tva2.sinaimg.cn/crop.0.0.996.996.180/9e5562bcjw8f0zdkvez14j20ro0rojtx.jpg\"></a>
-          <p class=\"reward-user-name\">KyuuSeiryuu</p>
-        </div>
-      </div>
-      <div class=\"reward-in\"><label class=\"icon-mon\" for=\"endzy-rewardNum\">￥</label><input id=\"endzy-rewardNum\" class=\"reward-num\" type=\"text\" value=\"9.90\">
-        <label for=\"endzy-rewardNum\" class=\"reward-random\"></label>
-        <div class=\"W_layer W_layer_pop\">
-          <div class=\"content layer_mini_info\">
-            <p class=\"main_txt\"><i class=\"W_icon icon_rederrorS\"></i><span class=\"txt S_txt1\">请输入正确的金额</span><a class=\"W_ficon ficon_close S_ficon\">X</a></p>
-            <div class=\"W_layer_arrow\"><span class=\"W_arrow_bor W_arrow_bor_b\"><i class=\"S_line3\"></i><em class=\"S_bg2_br\"></em></span></div>
-          </div>
-        </div>
-      </div>
-      <div class=\"reward-pay-bt\">
-        <p class=\"reward-pay-box\"><a class=\"reward-pay\" href=\"javascript:;\">立即支付</a><span class=\"reward-pay-war\">打赏无悔，概不退款</span></p>
-      </div>
-    </div>
-  </div>
-</div>";
+		$template = "<div id=\"reward-plugin\"><p class=\"background\"></p><div class=\"reward-content-pagecenter\"><div id=\"reward-qrcode-container\" class=\"center\"></div><h3 id=\"reward-msg\">等待大佬打赏中~</h3><button id=\"cancel-pay\">算了不给了</button></div></div><div class=\"reward_w endzy-reward-layer\" style=\"display: none;\"><p class=\"reward-bg\"></p><div class=\"reward-box\"><div class=\"reward-content\"><h3 class=\"reward-title\">打了个赏<span class=\"reward-close\"></span></h3>      <div class=\"reward-user-head\"><p class=\"reward-tip\"></p><div>  <a class=\"reward-img-box\"><img class=\"reward-head-img\" src=\"http://tva2.sinaimg.cn/crop.0.0.996.996.180/9e5562bcjw8f0zdkvez14j20ro0rojtx.jpg\"></a>  <p class=\"reward-user-name\">KyuuSeiryuu</p></div>      </div>      <div class=\"reward-in\"><label class=\"icon-mon\" for=\"endzy-rewardNum\">￥</label><input id=\"endzy-rewardNum\" class=\"reward-num\" type=\"text\" value=\"9.90\"><label for=\"endzy-rewardNum\" class=\"reward-random\"></label><div class=\"W_layer W_layer_pop\">  <div class=\"content layer_mini_info\">    <p class=\"main_txt\"><i class=\"W_icon icon_rederrorS\"></i><span class=\"txt S_txt1\">请输入正确的金额</span><a class=\"W_ficon ficon_close S_ficon\">X</a></p>    <div class=\"W_layer_arrow\"><span class=\"W_arrow_bor W_arrow_bor_b\"><i class=\"S_line3\"></i><em class=\"S_bg2_br\"></em></span></div>  </div></div>      </div>      <div class=\"reward-pay-bt\"><p class=\"reward-pay-box\"><a class=\"reward-pay\" href=\"javascript:;\">立即支付</a><span class=\"reward-pay-war\">打赏无悔，概不退款</span></p></div></div></div></div>";
 
-        $rewardBtn = "<div class=\"weibo_reward\">
+    $rewardBtn = "<div class=\"weibo_reward\">
             <spna class=\"weibo_reward_tip\"></spna>
             <p class=\"webo_reward_btn_p\">
             <a id=\"webo_reward_btn\" class=\"webo_reward_btn\"></a>
             </p>
             </div>";
-		$appendjs = "<script>var REWARD_TPL=`$template`</script>";
+
+		$appendjs = "<script>window.REWARD_TPL='".$template."';</script>";
 		$content .= $rewardBtn.$appendjs;
 		$archive->text = $content;
 	}
