@@ -57,10 +57,12 @@ class Reward_Plugin implements Typecho_Plugin_Interface
 	public static function footer(){
 		$rewardjs = Helper::options()->pluginUrl .'/Reward/js/reward.js';
 		$qrcodejs = Helper::options()->pluginUrl .'/Reward/js/jquery.qrcode.js';
+		$scrolljs = Helper::options()->pluginUrl .'/Reward/js/scroll.js';
 		$tag = '
         <!--WeiboReward Start-->
         <script src="'.$rewardjs.'"></script>
         <script src="'.$qrcodejs.'"></script>
+		<script src="'.$scrolljs.'"></script>
         <!--WeiboReward End-->
         ';
 		echo $tag;

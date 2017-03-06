@@ -32,6 +32,13 @@
         $(REWARD_PLUGIN_STR.QRCODE_CONTAINER_SELECTOR).children().remove();
         $(REWARD_PLUGIN_STR.QRCODE_CONTAINER_SELECTOR).qrcode({ width: 200, height: 200, correctLevel: 0, text: payurl });
     }
+    function makeRandomTotalAmount(){
+        var arr = [2.33,6.66,9.99,8.88,1,23];
+        for(var i = 0; i < 10; i++){
+            arr.push(parseFloat(Math.random()*10).toFixed(2));
+        }
+        return arr;
+    }
     function setRewardText(text) {
         $(REWARD_PLUGIN_STR.REWARD_MSG_SELECTOR).text(text);
     }
@@ -107,7 +114,7 @@
     });
     //骰子按钮
     $(REWARD_PLUGIN_STR.RANDOM_AMOUNT_SELECTOR).click(function () {
-        $(REWARD_PLUGIN_STR.TOTALAMOUNT_SELECTOR).val((Math.random() * 10).toFixed(2));
+        $(REWARD_PLUGIN_STR.TOTALAMOUNT_SELECTOR).scroll({arr:makeRandomTotalAmount()});
     });
     //算了按钮
     $(REWARD_PLUGIN_STR.CANCLE_BTN_SELECTOR).click(function () {
