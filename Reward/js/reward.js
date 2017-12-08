@@ -33,7 +33,7 @@
         $(REWARD_PLUGIN_STR.QRCODE_CONTAINER_SELECTOR).qrcode({ width: 200, height: 200, correctLevel: 0, text: payurl });
     }
     function makeRandomTotalAmount(){
-        var arr = [2.33, 6.66, 9.99, 8.88, 1.00, 23.00, 23.33];
+        var arr = ['2.33', '6.66', '9.99', '8.88', '1.00', '23.00', '23.33'];
         for(var i = 0; i < 10; i++){
             arr.push(parseFloat(Math.random()*10).toFixed(2));
         }
